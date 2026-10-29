@@ -1,0 +1,67 @@
+{
+  "name": "dsh-whale-boot",
+  "version": "1.0.0",
+  "description": "星海鲸跃：DeepSeek Harness 纯代码启动动画（Canvas 粒子星海 + 鲸鱼跃出 + 真实启动进度，零素材、即装即用）。",
+  "license": "MIT",
+  "author": "lyc-create-blip",
+  "icon": "icon.svg",
+  "keywords": [
+    "dsh",
+    "deepseek",
+    "deepseek-harness",
+    "plugin",
+    "boot",
+    "animation",
+    "splash",
+    "canvas",
+    "启动动画"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lyc-create-blip/dsh-whale-boot.git"
+  },
+  "homepage": "https://github.com/lyc-create-blip/dsh-whale-boot#readme",
+  "bugs": {
+    "url": "https://github.com/lyc-create-blip/dsh-whale-boot/issues"
+  },
+  "type": "module",
+  "main": "entry.js",
+  "exports": {
+    ".": "./entry.js",
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./locale/*": "./locale/*",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "entry.js",
+    "lib",
+    "src",
+    "locale",
+    "cordis.patch.yml",
+    "icon.svg",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.18.4"
+  },
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.0-rc.2"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

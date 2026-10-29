@@ -1,0 +1,10 @@
+# dsh-whale-boot bundle layer: mounted by `dsh plugin add` / the official
+# 设置 → 插件 → 添加插件 page, so a profile gets this row without manual
+# cordis.patch.yml edits. A profile-level patch can still disable the row by id.
+#
+# The row id doubles as the settings namespace: the browser half's settings card
+# (lib/client.js, SETTINGS_NAMESPACE) pairs with exactly this string, and the
+# Host half's Config schema is served under it. Renaming it orphans the card.
+- insert:
+    - id: dsh-whale-boot
+      name: dsh-whale-boot
